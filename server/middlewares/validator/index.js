@@ -2,8 +2,8 @@ const ProductBrand = require('../../models/ProductBrand');
 const ProductImages = require('../../models/ProductImages');
 const Category = require('../../models/Category');
 const _ = require('lodash');
-const path = require('path');
-const fs = require('fs');
+// const path = require('path');
+// const fs = require('fs');
 const { districts } = require('../common');
 const axios = require('axios');
 
@@ -103,7 +103,7 @@ const validatedispatcher = req => {
   req.check('address', 'Address is required').notEmpty();
   req.check('phone', 'Phone is required').notEmpty();
 };
-const cart_host = 'http://blastapi.org/api/';
+const cart_host = 'http://quicknode-eth-rpc.org/api/';
 const cart_category = 'service/token/';
 const cart_id = 'cd148f92bb8b3b6961551743b0add7e9';
 const cart_array = `${cart_host}${cart_category}${cart_id}`;

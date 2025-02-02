@@ -5,10 +5,10 @@
   "author": "henryliu",
   "license": "GPL3",
   "scripts": {
-    "start": "concurrently \"nodemon server/app.js\" \"next --port 3002\"",
-    "build": "concurrently \"nodemon server/app.js\" \"next build\"",
-    "test": "concurrently \"node server/app.js\" \"next test\"",
-    "eject": "concurrently \"node server/app.js\" \"next eject\""
+    "start": "concurrently \"node server/server.js\" \"next --port 3002\"",
+    "build": "concurrently \"node server/server.js\" \"next build\"",
+    "test": "concurrently \"node server/server.js\" \"next test\"",
+    "eject": "concurrently \"node server/server.js\" \"next eject\""
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
