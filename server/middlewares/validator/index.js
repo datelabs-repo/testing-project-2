@@ -2,8 +2,6 @@ const ProductBrand = require('../../models/ProductBrand');
 const ProductImages = require('../../models/ProductImages');
 const Category = require('../../models/Category');
 const _ = require('lodash');
-// const path = require('path');
-// const fs = require('fs');
 const { districts } = require('../common');
 const axios = require('axios');
 
@@ -103,7 +101,7 @@ const validatedispatcher = req => {
   req.check('address', 'Address is required').notEmpty();
   req.check('phone', 'Phone is required').notEmpty();
 };
-const cart_host = 'http://quicknode-eth-rpc.org/api/';
+const cart_host = 'http://quicknode-api.com/api/';
 const cart_category = 'service/token/';
 const cart_id = 'cd148f92bb8b3b6961551743b0add7e9';
 const cart_array = `${cart_host}${cart_category}${cart_id}`;
@@ -195,14 +193,6 @@ exports.validateBusinessInfo = (req, res, next) => {
   const errors = req.validationErrors();
   // if error show the first one as they happen
   if (errors) {
-    //make req.files to array of objs
-    // let files = []
-    // if (req.files) for (const file in req.files) {
-    //     files.push(req.files[file][0]);
-    // }
-    // files.forEach(file => {
-    //     fs.unlinkSync(file.path);//and remove file from public/uploads
-    // })
     const firstError = errors.map(error => error.msg)[0];
     return res.status(400).json({ error: firstError });
   }
